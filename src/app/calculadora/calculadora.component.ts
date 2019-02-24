@@ -40,17 +40,17 @@ export class CalculadoraComponent implements OnInit {
     convenios: new FormControl('', Validators.required),
   });
 
-  get outrosEmprestimos() {
-    return this.formOutrasDespesas.get('outrosEmprestimos').value;
+  get outrosEmprestimos(): number {
+    return this.zeroIfEmpty(this.formOutrasDespesas.get('outrosEmprestimos').value);
   }
-  get despesasPlanoSaude() {
-    return this.formOutrasDespesas.get('despesasPlanoSaude').value;
+  get despesasPlanoSaude(): number {
+    return this.zeroIfEmpty(this.formOutrasDespesas.get('despesasPlanoSaude').value);
   }
-  get outrasMensalidades() {
-    return this.formOutrasDespesas.get('outrasMensalidades').value;
+  get outrasMensalidades(): number {
+    return this.zeroIfEmpty(this.formOutrasDespesas.get('outrasMensalidades').value);
   }
-  get convenios() {
-    return this.formOutrasDespesas.get('convenios').value;
+  get convenios(): number {
+    return this.zeroIfEmpty(this.formOutrasDespesas.get('convenios').value);
   }
 
 
@@ -61,59 +61,68 @@ export class CalculadoraComponent implements OnInit {
   constructor() {}
 
 
-  get salarioBase() {
-    return this.form.get('salarioBase').value;
+  get salarioBase(): number {
+    return this.zeroIfEmpty(this.form.get('salarioBase').value);
   }
 
-  get quinquenio() {
-    return this.form.get('quinquenio').value;
+  get quinquenio(): number {
+    return this.zeroIfEmpty(this.form.get('quinquenio').value);
   }
 
-  get apostilamento() {
-    return this.form.get('apostilamento').value;
+  get apostilamento(): number {
+    return this.zeroIfEmpty(this.form.get('apostilamento').value);
   }
 
-  get adcNoturno() {
-    return this.form.get('adcNoturno').value;
+  get adcNoturno(): number {
+    return this.zeroIfEmpty(this.form.get('adcNoturno').value);
   }
 
-  get insalubridade() {
-    return this.form.get('insalubridade').value;
+  get insalubridade(): number {
+    return this.zeroIfEmpty(this.form.get('insalubridade').value);
   }
 
-  get periculosidade() {
-    return this.form.get('periculosidade').value;
+  get periculosidade(): number {
+    return this.zeroIfEmpty(this.form.get('periculosidade').value);
   }
 
 
   //Subtraidos
 
-  get inss() {
-    return this.formSubtraidos.get('inss').value;
+  get inss(): number {
+    return this.zeroIfEmpty(this.formSubtraidos.get('inss').value);
   }
-  get previdencia() {
-    return this.formSubtraidos.get('previdencia').value;
+  get previdencia(): number {
+    return this.zeroIfEmpty(this.formSubtraidos.get('previdencia').value);
   }
 
   get IRRF(): number {
-    return this.formSubtraidos.get('IRRF').value;
+    return this.zeroIfEmpty(this.formSubtraidos.get('IRRF').value);
   }
 
   get pensao() {
-    return this.formSubtraidos.get('pensao').value;
+    return this.zeroIfEmpty(this.formSubtraidos.get('pensao').value);
   }
 
-  get valeTransporte() {
-    return this.formSubtraidos.get('valeTransporte').value;
+  get valeTransporte(): number {
+    return this.zeroIfEmpty(this.formSubtraidos.get('valeTransporte').value);
   }
 
 
-  get planoSaude() {
-    return this.formSubtraidos.get('planoSaude').value;
+  get planoSaude(): number {
+    return this.zeroIfEmpty(this.formSubtraidos.get('planoSaude').value);
   }
 
 
   ngOnInit() {}
+
+
+  zeroIfEmpty(value: number): number {
+    if (!value) {
+      return 0.0;
+    } else {
+      return value;
+    }
+  }
   calcular() {
     console.log(this.salarioBase);
     this.salarioBruto = this.salarioBase + this.quinquenio +
