@@ -95,7 +95,7 @@ export class CalculadoraComponent implements OnInit {
     return this.formSubtraidos.get('previdencia').value;
   }
 
-  get IRRF() {
+  get IRRF(): number {
     return this.formSubtraidos.get('IRRF').value;
   }
 
@@ -121,13 +121,12 @@ export class CalculadoraComponent implements OnInit {
   }
 
   calcularSubtraidos() {
-    alert('dsadsa');
     this.totalSubtraidos = (this.inss + this.previdencia +
       this.IRRF + this.pensao + this.valeTransporte + this.planoSaude);
   }
 
   calculaTotal() {
-    this.outrasDespesas = this.outrasDespesas + this.despesasPlanoSaude + this.outrasMensalidades + this.convenios;
-    this.totalMargem = 0.3 * (this.salarioBruto - this.salarioBruto) - this.outrasDespesas;
+    this.outrasDespesas = this.outrosEmprestimos + this.despesasPlanoSaude + this.outrasMensalidades + this.convenios;
+    this.totalMargem = 0.3 * (this.salarioBruto - this.totalSubtraidos) - this.outrasDespesas;
   }
 }
