@@ -1,0 +1,131 @@
+<!-- <h2 class="card-header">Calculadora de Margem para Emprestimo</h2> -->
+<div style="display:inline-block;" class=" col-md-4 col-md-offset-4 card">
+  <form [formGroup]="form" (ngSubmit)="calcular()" >
+    <h4 class="card-header">Calculadora de Redimentos Totais</h4>
+    <div class="card-body">
+
+    <div class="form-group ">
+      <label for="inputSalarioBase">Salário Base:</label>
+      <input type="number" class="form-control" formControlName="salarioBase" id="inputSalarioBase" >
+    </div>
+
+    <div class="form-group">
+      <label for="inputQuinquenio">Quinquênio:</label>
+      <input type="number" class="form-control" formControlName="quinquenio" id="inputQuinquenio" >
+    </div>
+
+    <div class="form-group">
+      <label for="inputApostilamento">Apostilamento:</label>
+      <input type="number" class="form-control" formControlName="apostilamento" id="inputApostilamento" >
+    </div>
+
+    <div class="form-group">
+      <label for="inputAdcNoturno">Adicional Noturno:</label>
+      <input type="number" class="form-control" formControlName="adcNoturno" id="inputAdcNoturno" >
+    </div>
+
+
+    <div class="form-group">
+      <label for="inputInsalubridade">Insalubridade:</label>
+      <input type="number" class="form-control" formControlName="insalubridade" id="inputInsalubridade" >
+    </div>
+
+    <div class="form-group">
+      <label for="inputPericulosidade">Periculosidade:</label>
+      <input type="number" class="form-control" formControlName="periculosidade" id="inputPericulosidade" >
+    </div>
+
+
+
+    <button id="btnCalcMargem" class="btn btn-primary">Calcular Rendimentos</button>
+    <div>
+      <h3 class=".bg-success">Total dos Rendimentos:</h3>
+      <h3 id="salarioBruto" class=".bg-success">R$ {{salarioBruto}}</h3>
+    </div>
+  </div>
+  </form>
+</div>
+
+<div  style="display:inline-block;"  class=" col-md-4 col-md-offset-4 card">
+  <form [formGroup]="formSubtraidos" (ngSubmit)="calcularSubtraidos()" >
+    <h4 class="card-header">Valores Subtraidos</h4>
+    <div class="card-body">
+
+    <div class="form-group ">
+      <label for="inputinss">INSS:</label>
+      <input type="number" class="form-control" formControlName="inss" id="inputinss" >
+    </div>
+
+    <div class="form-group">
+      <label for="inputPrevidencia">Previdência:</label>
+      <input type="number" class="form-control" formControlName="previdencia" id="inputPrevidencia" >
+    </div>
+
+    <div class="form-group">
+      <label for="inputIRRF">IRRF:</label>
+      <input type="number" class="form-control" formControlName="IRRF" id="inputIRRF" >
+    </div>
+
+    <div class="form-group">
+      <label for="inputPensao">Pensão:</label>
+      <input type="number" class="form-control" formControlName="pensao" id="inputPensao" >
+    </div>
+
+
+    <div class="form-group">
+      <label for="inputValeTransporte">Vale transporte:</label>
+      <input type="number" class="form-control" formControlName="valeTransporte" id="inputValeTransporte" >
+    </div>
+
+    <div class="form-group">
+      <label for="inputPlanoSaude">Mensalidade Plano de saúde:</label>
+      <input type="number" class="form-control" formControlName="planoSaude" id="inputPlanoSaude" >
+    </div>
+
+    <button id="btnCalcularSubtraidos" class="btn btn-primary btn-danger">Calcular Valores Subtraidos</button>
+    <div>
+      <h3 class=".bg-success">Total dos valores subtraidos:</h3>
+      <h3 id="totalSubtraidos" class=".bg-success">R$ {{totalSubtraidos}}</h3>
+    </div>
+  </div>
+  </form>
+</div>
+
+
+
+
+<div  style="display:inline-block;"  class=" col-md-4 col-md-offset-4 card">
+  <form [formGroup]="formOutrasDespesas" (ngSubmit)="calculaTotal()" >
+    <h4 class="card-header">Outras Despesas</h4>
+    <div class="card-body">
+
+    <div class="form-group ">
+      <label for="inputOutrosEmprestimos">Outros Emprestimos:</label>
+      <input type="number" class="form-control" formControlName="outrosEmprestimos" id="inputOutrosEmprestimos" >
+    </div>
+
+    <div class="form-group">
+      <label for="inputDespesasDePlanoDeSaude">Despesas de plano de saúde:</label>
+      <input type="number" class="form-control" formControlName="despesasPlanoSaude" id="inputDespesasDePlanoDeSaude" >
+    </div>
+
+    <div class="form-group">
+      <label for="inputOutrasMensalidades">Outras Mensalidades:</label>
+      <input type="number" class="form-control" formControlName="outrasMensalidades" id="inputOutrasMensalidades" >
+    </div>
+
+    <div class="form-group">
+      <label for="inputConvenios">Convenios:</label>
+      <input type="number" class="form-control" formControlName="convenios" id="inputConvenios" >
+    </div>
+
+
+    <button id="btnCalcularSubtraidos" class="btn btn-primary btn-danger">Calcular Valores Subtraidos</button>
+    <div>
+      <h3 class=".bg-success">Total Margem de Emprestimo disponivel:</h3>
+      <h3 id="totalMargem" class=".bg-success">R$ {{totalMargem}}</h3>
+    </div>
+  </div>
+  </form>
+</div>
+

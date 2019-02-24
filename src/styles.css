@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body { padding: 20px;}
+input{padding:5px}
+.btn {
+    width:100%;
+    height: 40px;
+    display:block;
+}
+
+/* Hide all steps by default: */
+.tab {
+    display: none;
+  }
+
+  /* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none; 
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+
+  /* Mark the active step: */
+.step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #4CAF50;
+  }
