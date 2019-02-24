@@ -126,7 +126,7 @@ export class CalculadoraComponent implements OnInit {
       this.IRRF + this.pensao + this.valeTransporte + this.planoSaude);
   }
 
-  calculoTotal() {
+  calculaTotal() {
     this.outrasDespesas = this.outrasDespesas + this.despesasPlanoSaude + this.outrasMensalidades + this.convenios;
     this.totalMargem = 0.3 * (this.salarioBruto - this.salarioBruto) - this.outrasDespesas;
   }
