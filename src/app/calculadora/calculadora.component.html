@@ -40,7 +40,7 @@
     <button id="btnCalcMargem" class="btn btn-primary">Calcular Rendimentos</button>
     <div>
       <h3 class=".bg-success">Total dos Rendimentos:</h3>
-      <h3 id="salarioBruto" class=".bg-success">R$ {{salarioBruto}}</h3>
+      <h3 id="salarioBruto" class=".bg-success"> {{salarioBruto| currency:'BRL' }}</h3>
     </div>
   </div>
   </form>
@@ -85,7 +85,7 @@
     <button id="btnCalcularSubtraidos" class="btn btn-primary btn-danger">Calcular Valores Subtraidos</button>
     <div>
       <h3 class=".bg-success">Total dos valores subtraidos:</h3>
-      <h3 id="totalSubtraidos" class=".bg-success">R$ {{totalSubtraidos}}</h3>
+      <h3 id="totalSubtraidos" class=".bg-success">R$ {{totalSubtraidos| currency:'BRL':2 }}</h3>
     </div>
   </div>
   </form>
@@ -123,7 +123,7 @@
     <button id="btnCalcularSubtraidos" class="btn btn-primary btn-danger">Calcular Valores Subtraidos</button>
     <div>
       <h3 class=".bg-success">Total Margem de Emprestimo disponivel:</h3>
-      <h3 id="totalMargem" class=".bg-success">R$ {{totalMargem}}</h3>
+      <h3 id="totalMargem" class=".bg-success">R$ {{totalMargem| currency:'BRL':2 }}</h3>
     </div>
   </div>
   </form>
